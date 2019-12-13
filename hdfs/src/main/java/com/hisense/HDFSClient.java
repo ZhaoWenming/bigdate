@@ -20,7 +20,7 @@ public class HDFSClient {
         FileSystem fs = FileSystem.get(new URI("hdfs://centos102:9000"), conf, "zwm");
         // 2在hdfs上创建路径
         fs.mkdirs(new Path("/dabing"));
-        fs.delete(new Path("/dashen"), true);
+        fs.delete(new Path("/dabing"), true);
         // 3关闭资源
         fs.close();
         System.out.println("over");
