@@ -66,11 +66,30 @@ public class HDFSIO {
         // 4流的对拷（只拷128m）
         byte[] buf = new byte[1024];
         for (int i = 0; i < 1024 * 128; i++) {
-            
+            fis.read(buf);
+            fos.write(buf);
         }
-        // 5关闭资
+        // 5关闭资源
         IOUtils.closeStreams(fis, fos);
         fs.close();
     }
 
+    // 下载第二块
+    @Test
+    public void readFileSeek2() throws IOException, URISyntaxException, InterruptedException {
+        // 1获取对象
+        Configuration conf = new Configuration();
+        FileSystem fs = FileSystem.get(new URI("hdfs://centos102:9000"), conf, "zwm");
+        // 2获取输入流
+        FSDataInputStream fis = fs.open(new Path("/hadoop-2.10.0.tar.gz"));
+        // 3设置指定读取的起点
+        fis.seek(1024*1024*128);
+        // 4获取输出流
+        FileOutputStream fos = new FileOutputStream(new File("e:/hadoop-2.10.0.tar.gz.part2"));
+        // 5流的对拷
+        IOUtils.copyBytes(fis, fos, conf);
+        // 6关闭资源
+        IOUtils.closeStreams(fis, fos);
+        fs.close();
+    }
 }
