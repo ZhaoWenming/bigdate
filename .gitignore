@@ -14,3 +14,4 @@ hdfs/.idea/modules.xml
 hdfs/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
 hdfs/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 *.class
+mr-wordcount/.idea/workspace.xml
