@@ -64,15 +64,15 @@ public class FlowBean implements Writable {
     /**
      * 反序列化方法
      *
-     * @param in 需要分序列化的资源
+     * @param in 需要反序列化的资源
      * @throws IOException if an I/O error occurs
      */
     @Override
     public void readFields(DataInput in) throws IOException {
         // 必须要求和序列化方法顺序一致
-        long upFlow = in.readLong();
-        long downFlow = in.readLong();
-        long sumFlow = in.readLong();
+        this.upFlow = in.readLong();
+        this.downFlow = in.readLong();
+        this.sumFlow = in.readLong();
     }
 
     @Override
@@ -105,6 +105,8 @@ public class FlowBean implements Writable {
     }
 
     public void set(long upFlow, long downFlow){
+        this.upFlow=upFlow;
+        this.downFlow=downFlow;
         this.sumFlow = upFlow + downFlow;
     }
 

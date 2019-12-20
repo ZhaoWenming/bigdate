@@ -21,7 +21,7 @@ public class FlowCountMapper extends Mapper<LongWritable, Text, Text, FlowBean> 
         String line = value.toString();
 
         // 2切割\t
-        String[] fields = line.split("\t");
+        String[] fields = line.split("[\\s]+");
 
         // 3封装对象
         k.set(fields[1]);
