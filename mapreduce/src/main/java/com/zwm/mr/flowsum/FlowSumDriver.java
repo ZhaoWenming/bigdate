@@ -30,7 +30,7 @@ public class FlowSumDriver {
         job.setOutputValueClass(FlowBean.class);
 
         /**
-         * 6,7两个步骤没有进行调试，如果调试不通过，讲7，8注释掉即可
+         * 6,7两个步骤没有进行调试，如果调试不通过，将7，8注释掉即可
          */
         // 6果不设置InputFormat，它默认用的是TextInputFormat.class
         //job.setInputFormatClass(CombineTextInputFormat.class);
