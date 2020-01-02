@@ -1,8 +1,5 @@
 package com.zwm.mr.kv;
 
-import com.zwm.mr.wordcount.WordCountDriver;
-import com.zwm.mr.wordcount.WordCountMapper;
-import com.zwm.mr.wordcount.WordCountReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -11,8 +8,8 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.KeyValueLineRecordReader;
 import org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.NLineInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 import java.io.IOException;
 
@@ -27,7 +24,6 @@ public class KVTextDriver {
         conf.set(KeyValueLineRecordReader.KEY_VALUE_SEPERATOR, " ");
         // 1获取job对象
         Job job = Job.getInstance(conf);
-
         // 2设置jar存放位置
         job.setJarByClass(KVTextDriver.class);
 

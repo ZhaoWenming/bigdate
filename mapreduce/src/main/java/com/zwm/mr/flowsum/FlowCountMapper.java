@@ -4,7 +4,9 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 
 /**
  * Mapper过程类

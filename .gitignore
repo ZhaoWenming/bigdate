@@ -15,3 +15,7 @@ hdfs/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFi
 hdfs/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 *.class
 mr-wordcount/.idea/workspace.xml
+zookeeper/.idea/vcs.xml
+zookeeper/.idea/misc.xml
+zookeeper/.idea/compiler.xml
+zookeeper/.idea/encodings.xml
